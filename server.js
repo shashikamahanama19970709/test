@@ -53,23 +53,23 @@ const Product=mongoose.model('Product',productSchema);
 // })
 
 app.get('/',async(req,res)=>{
-    const Student=require("./models/StudentModel")
-    try{
-        const student=new Student
-        student.stname="new stuent name"
-        const studentSaved=await student.save()
-        console.log(studentSaved===student)
+    // const Student=require("./models/StudentModel")
+    // try{
+    //     const student=new Student
+    //     student.stname="new stuent name"
+    //     const studentSaved=await student.save()
+    //     console.log(studentSaved===student)
 
-        const students=await Student.find()
-        console.log(students.length)
-        res.send("Student created " + student._id)
+    //     const students=await Student.find()
+    //     console.log(students.length)
+    //     res.send("Student created " + student._id)
 
 
-    }catch(er){
-        next(er)
+    // }catch(er){
+    //     next(er)
 
-    }
-    // res.json({message:"API running...."})
+    // }
+    res.json({message:"API running...."})
 })
 
 app.get('/user',async(req,res)=>{
